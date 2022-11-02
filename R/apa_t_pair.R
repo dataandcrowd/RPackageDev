@@ -26,8 +26,17 @@
 apa_t_pair <- function(x, y,
                        dv = "the DV",
                        level1 = "level 1",
-                       level2 = "level 2") {
-  t_results <- t.test(x, y, paired = TRUE)
+                       level2 = "level 2",
+                       alpha = 0.05) {
+  # error check
+  if (all(x == y)) {
+    stop("The values for x and y should probably not be identical.")
+  }
+
+
+    t_results <- t.test(x = x,
+                        y = y,
+                        paired = TRUE)
 
   template <- "A paired-samples t-test was conducted to compare {dv} between {level1} (M = {mean1}, SD = {sd1}) and {level2} (M = {mean2}, SD = {sd2}). There was a {non}significant difference; t({df}) = {t_value}, p = {p_value}."
 

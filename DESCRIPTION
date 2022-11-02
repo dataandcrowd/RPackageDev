@@ -1,5 +1,5 @@
 Package: RPackageDev
-Date: 2022-10-12
+Date: 2022-11-12
 Title: Demo Package
 Version: 0.0.0.9000
 Authors@R: 
@@ -16,3 +16,6 @@ RoxygenNote: 7.2.1
 Depends: 
     R (>= 2.10)
 LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
